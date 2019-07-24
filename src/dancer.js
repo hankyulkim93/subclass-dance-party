@@ -12,6 +12,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 // use jQuery to create an HTML <span> tag
 
+var orbitArrLeft = [];
+var orbitArrTop = [];
 
 makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
@@ -30,13 +32,26 @@ makeDancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+  orbitArrLeft.push(left);
+  orbitArrTop.push(top);
+  console.log(orbitArrLeft);
+  console.log(orbitArrTop);
 };
 
 makeDancer.prototype.moveDancersLeft = function() {
-  
+  console.log(this);
   this.setPosition(this.top, 0);
 
 }
 
+makeDancer.prototype.orbit = function() {
+  
+  
+  this.setPosition(orbitArrTop[0], orbitArrLeft[0]);
+  orbitArrTop.splice(0, 2);
+  orbitArrLeft.splice(0, 2);
+  this.$node.css( "-webkit-animation", "myOrbit 4s linear infinite" )
+
+}
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
 // this one sets the position to some random default point within the body

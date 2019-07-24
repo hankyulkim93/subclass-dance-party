@@ -33,14 +33,16 @@ $(document).ready(function() {
   });
 
   $('.moveDancersLeft').on('click', function(event) {
-    console.log('working');
     for (var i = 0; i < window.dancers.length; i++) {
-      console.log('working');
       window.dancers[i].moveDancersLeft();
-
-      console.log(dancers);
     }
   })
-  
+  //for loop with i + 2;
+
+  $('.orbit').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i+=2) {
+      window.dancers[i+1].orbit();
+    }
+  })
 });
 

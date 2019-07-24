@@ -11,9 +11,9 @@ body, a:link, a:visited, a:active{
   color: lightblue;
 }
 
-head, .title{
+body, .title{
   color: blue;
-  text-align: left;
+  text-align: right;
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -31,19 +31,22 @@ head, .title{
   content: url("hienwow.png");
   border: 0px;
   border-radius: 0px;
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   position:absolute;
 
 }
 
+.dancer2:hover {
+  content: url("hienhover.png");
+}
 
 .dancer2{
   content: url("hienhands.png");
   border: 0px;
   border-radius: 0px;
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   position:absolute;
   -webkit-animation: spin 4s infinite linear;
 }
@@ -56,7 +59,12 @@ head, .title{
   content: url("hiendance.gif");
   border: 0px;
   border-radius: 0px;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 240px;
   position:absolute;
+}
+
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
